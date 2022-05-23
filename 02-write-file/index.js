@@ -16,8 +16,6 @@ rl.on('SIGINT', () => {
             
 })
 rl.on('line', (input) => {
-    
-    // console.log(`Received: ${input}`);
 let yourText = `${input}`
         if(yourText === 'exit'){
             console.log("Thank you for your text");

@@ -13,7 +13,7 @@ fs.readdir(pathToSecret, (err, data) => {
             if(err) {
                 throw err
             }
-            if(stats.size > 0) {
+            if(stats.isFile()) {
                 console.log(path.parse(file).name + ' - ' + path.extname(file).split('.').pop() + ' - ' + stats.size + 'b')
             }
         }

@@ -60,44 +60,13 @@ fs.readdir(pathToStartStyles, (err, data) => {
   })
 })
 
-// fs.open(pathToStyles
-// , 'a', (err) => {
-//   if(err) { throw err; } 
-//   console.log('style.css created');
-//   fs.truncate(pathToStyles
-//   , (err) => {
-//     if(err) throw err;
-//   });
-
-//   (async function(folderPath) {
-//     try {
-//       const files = await readdir(folderPath);
-//       for (const file of files)
-//         if (path.extname(`${file}`) == '.css') {
-//           const rr = fs.createReadStream(path.join(folderPath, file));
-//           rr.on('data', (chunk) => { 
-//             fs.appendFile(pathToStyles
-//             , chunk, (err) => {
-//               if(err) throw err;
-//             });
-//           });
-//           console.log(`${file} added to style.css`);
-//           fs.appendFile(pathToStyles
-//           , '\n\n', (err) => {if(err) throw err;});
-//         }
-//     } catch (error) {
-//       console.error('there was an error:', error.message);
-//     }
-//   })(path.join(__dirname, 'styles'));
-  
-// });
-
 //assets
 
 function copyAssets(sourcePath, targetPath) {
 
   fs.mkdir(targetPath, { recursive: true }, (err) => {
     if (err) throw err;
+    console.log('asset done');
   });
 
   (async function(sourcePath) {
